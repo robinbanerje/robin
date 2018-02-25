@@ -1,0 +1,28 @@
+#include <stdio.h>
+
+float largest(float a,float b, float c)
+{ 
+  float largest;
+    {
+     if(a>b)
+      largest=a;
+     else 
+      largest=b;
+    }
+    
+    {
+     if(largest>c)
+      largest=largest;
+     else
+     largest=c;
+    }
+ return largest;
+}
+int main()
+{
+ float n1,n2,n3;
+    printf("\nenter three numbers\n");
+    scanf("%f%f%f",&n1,&n2,&n3);
+ printf("\nlargest number is %f",largest(n1,n2,n3));
+ return 0;
+}
