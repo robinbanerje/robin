@@ -1,0 +1,50 @@
+/*Program to maintain a record of "n" student details 
+using an array of structures with fields
+Roll number , name , department , marks and grade*/
+#include <stdio.h>
+#include <stdlib.h>
+
+struct student
+{
+     char rno[20];
+     char name[100];
+     char branch[100];
+     float marks;
+     char grade;
+};
+
+char calc_grade(float num)
+{ char g;
+    if(num>80) g='A';
+    else if (num>60&&num<=80) g='B';
+    else if (num>40&&num<=60) g='C';
+    else g='F';
+    return g;
+}
+
+
+
+int main()
+{
+int n; char choice;
+printf("size of sturct=%i",sizeof(struct student));
+ printf("\nenter the number of student details to be entered :\n");
+ scanf("%d",&n);
+ struct student *st;
+ st = calloc(n, sizeof(struct student));
+  for(int i=0;i<n;i++)
+    {
+     printf("\nenter the data for student %d\nroll number ?  ",i+1);
+     scanf("%s",st[i].rno);
+     printf("\nname ?  "); scanf("%s",st[i].name);
+     printf("\ndepartment ?  "); scanf("%s",st[i].branch);
+     printf("\nmarks ?  "); scanf("%f",&st[i].marks);
+     st[i].grade=calc_grade(st[i].marks);
+    }
+
+    for(int i=0;i<n;i++)
+    printf("\ndata for student %d\nroll number : %s\nname : %s\ndepartment: %s\nmarks: %f\ngrade: %c\n",i+1,st[i].rno,st[i].name,st[i].branch,st[i].marks,st[i].grade);
+
+    return 0;
+}
+
