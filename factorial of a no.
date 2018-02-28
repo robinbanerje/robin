@@ -1,0 +1,31 @@
+#include<stdio.h>
+
+long facto(int n)
+{ long fact=1;
+  if (n == 0)
+    return 1;
+  else
+    {
+    for (int c = 1; c <= n; c++)
+    fact = fact * c;
+    return fact;
+    }
+}
+
+int main()
+{
+  int n;  long fact;
+
+  printf("Enter an integer to find its factorial\n");
+  scanf("%d", &n); 
+
+  if (n < 0)
+    printf("Factorial of negative integers is not defined.\n");
+  else
+  {
+    fact = facto(n);
+    printf("%d! = %ld\n", n, fact);
+  }
+
+  return 0;
+}
