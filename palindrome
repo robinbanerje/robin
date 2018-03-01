@@ -1,25 +1,29 @@
-#include <stdio.h>
-
-int palindrome(int num)
-{
-  int rem,tmp,ans=0; 
-  tmp=num;
-  while(num!=0)
-    { rem=num%10;
-      ans=ans*10+rem;
-      num=num/10;
+#include<stdio.h>
+#include<string.h>
+int palindrom(char strin[],int *n)
+{ int ref,i=0;
+    while(*n>i)
+    {
+        if(strin[0]==strin[*n-1]) ref=1; 
+        else ref=0;
+        i++;*n--;
+        
     }
-    
-    {if(tmp==ans)return 1;
-    else return -1;}
+    return ref;
 }
-int main()
-{ int n;
-    printf("\n enter the number to check for palindrome:\n");
-    scanf("%d",&n);
-    if(palindrome(n)==1)
-    printf("\n the number is a palindrome");
-    else printf("\n the number isn't palindrome\n");
-    
+
+ main()
+{
+    int len,res;
+    char strin[100];
+    printf("\n enter to check palindrom: \n");
+    scanf("%s",&strin);
+    len=strlen(strin);
+    printf("length of the string is : %d",len);
+    res=palindrom(strin,&len);
+    {
+    if(res==1) printf("\nIts a palindrome");
+    else if(res==0) printf("\n Its not a palindrome");
+    }
     return 0;
 }
