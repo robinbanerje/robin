@@ -1,0 +1,29 @@
+#include <stdio.h>
+
+int checkEven(int num)
+{
+    if(num%2 == 0) 
+    return 1;
+    else
+    return 0;
+}
+
+int main()
+{
+int i,n,even=0,odd=0;
+printf("Enter the limit number:\n");
+scanf("%d",&n);
+for(i=1;i<=n;i++)
+{
+if(checkEven(i)==1)
+  {
+    printf("%d->EVEN\n",i);    even++;
+  }
+else
+  {
+    printf("%d->ODD\n",i);    odd++;
+  }
+}
+printf("%d even numbers and %d odd numbers till limit",even,odd);
+return 0;
+}
