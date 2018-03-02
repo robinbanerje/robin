@@ -1,0 +1,25 @@
+#include <stdio.h>
+
+char remark(int *n)
+{   char g='n';
+    if((*n>80)&&(*n<=100))g='A';
+    else if((*n>60)&&(*n<=80)) g='B';
+    else if((*n>40)&&(*n<=60)) g='C';
+    else if(*n<=40) g='F';
+    else printf("marks entered is not proper");
+    return g;
+}
+
+int main()
+{   char grade; int mark;
+    enter: printf("enter marks:\n");
+    scanf("%d",&mark);
+    grade=remark(&mark);
+    if(grade=='n')
+    {
+        printf("\nagain ");
+        goto enter;
+    }
+    else printf("\n grade for given mark is: %c",grade);
+    return 0;
+}
