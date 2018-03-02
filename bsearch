@@ -1,0 +1,40 @@
+#include<stdio.h>
+
+ main()
+{
+    int ar[10],key,n,pos;
+    printf("\nenter number of elements:");
+    scanf("%d",&n);
+    printf("\nenter array elements:");
+    for(int i=0;i<n;i++)
+    scanf("%d",&ar[i]);
+    printf("\nenter elements to be searched:");
+    scanf("%d",&key);
+    pos=binary(ar,n,key);
+    print(pos);
+   return 0;
+}
+
+int binary(int ar[],int size,int key)
+{
+    int beg=0,last=size-1,mid;
+    while(beg<=last)
+    {
+        mid=(beg+last)/2;
+        if(key==ar[mid])
+        return mid;
+        else if(key>ar[mid])
+        beg=mid+1;
+        else
+        last=mid-1;
+    }
+    return -1;
+}
+
+void print(int loc)
+{
+  if(loc==-1)
+    printf("\nelement not found");
+  else
+    printf("\nelement is fond at position:%d",loc+1);
+}
