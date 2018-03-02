@@ -1,21 +1,25 @@
 #include <stdio.h>
 
-void fibo(int num)
-{
- int a=0,b=1,add=0;
+int fibo(int num,int ar[])
+{ int a=0,b=1,add=0;
+ 
   for(int i=0;i<num;i++)
-    {
-    printf("%d ",a);
+   {
+    ar[i]=a;
     add=a+b;
     a=b;
     b=add;
-    }  
+    } 
+ return ar;
 }
 
 int main()
-{   int n;
+{   int n,ar[1000];
     printf("\nenter the number of fibonacci terms u want to find:\n");
     scanf("%d",&n);
-    fibo(n);
+    fibo(n,ar);
+    printf("\nfibonacci terms are:\n");
+    for(int i=0;i<n;i++)
+    printf(" %d",ar[i]);
     return 0;
 }
