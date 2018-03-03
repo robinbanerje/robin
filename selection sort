@@ -1,0 +1,32 @@
+#include<stdio.h>
+
+int selection(int ar[100],int n)
+{
+ for(int i=0;i<n;i++)
+    for(int j=i+1;j<(n);j++)
+        if(ar[i]>ar[j])
+        {
+            int t=ar[i];
+            ar[i]=ar[j];
+            ar[j]=t;
+        }
+}
+
+void output(int ar[100],int n)
+{
+    printf("Sorted array:\n");
+    for(int i=0;i<n;i++)
+    printf("%d ",ar[i]);
+}
+
+ main()
+{   int ar[100],n;
+    printf("Enter limit:");
+    scanf("%d",&n);
+    printf("Enter elements of array:\n");
+    for(int i=0;i<n;i++)
+        scanf("%d",&ar[i]);
+    selection(ar,n);
+    output(ar,n);
+return 0;
+}
