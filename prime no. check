@@ -1,0 +1,31 @@
+#include <stdio.h>
+
+int prime_check(int limit,int isPrime)
+{ int i,j;
+    for(i=2; i<=limit; i++)
+    {
+        isPrime = 1; 
+        for(j=2; j<=i-1; j++)
+        {
+            if(i%j==0)
+            {
+                isPrime = 0;
+                break;
+            }
+        }
+
+        if(isPrime==1)
+        {
+            printf("%d ", i);
+        }
+    }
+}
+
+void main()
+{
+    int end,isPrime; 
+    printf("Find prime numbers between 1 to : ");
+    scanf("%d", &end);
+    printf("All prime numbers between 1 to %d are:\n", end);
+    prime_check(end,isPrime);
+}
