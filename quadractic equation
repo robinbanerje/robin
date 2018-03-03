@@ -1,0 +1,48 @@
+#include<stdio.h>
+#include<math.h>
+
+struct root
+{
+    float a;
+    float b;
+    float c;
+    float d;
+};
+
+void quad(struct root r)
+{
+    double realPart, imaginaryPart;
+    float r1,r2;
+
+    if(r.d>0)
+    {
+    r1=(-r.b+(sqrt(r.d)))/(2*r.a);
+    r2=(-r.b-(sqrt(r.d)))/(2*r.a);
+    printf("roots are :%f and %f",r1,r2);
+    }
+
+    else if(r.d<0)
+    {
+    printf("roots are imaginary.");
+    realPart = -r.b/(2*r.a);
+    imaginaryPart = sqrt(-r.d)/(2*r.a);
+    printf("root1 = %f+%fi and root2 = %f-%fi", realPart, imaginaryPart, realPart, imaginaryPart);
+    }
+
+    else if(r.d==0)
+    {
+    r1=(-r.b)/(2*r.a);
+    r2=(-r.b)/(2*r.a);
+    printf("roots are same and equal to %f",r1);
+    }
+}
+
+void main()
+{
+    float a,b,c,d;
+    printf("enter value of a,b,c:");
+    scanf("%f%f%f",&a,&b,&c);
+    d=(b*b)-(4*a*c);
+    struct root r={a,b,c,d};
+    quad(r);
+}
