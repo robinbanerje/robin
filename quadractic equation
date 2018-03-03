@@ -37,7 +37,7 @@ void quad(struct root r)
     }
 }
 
-void main()
+ main()
 {
     float a,b,c,d;
     printf("enter value of a,b,c:");
@@ -45,4 +45,5 @@ void main()
     d=(b*b)-(4*a*c);
     struct root r={a,b,c,d};
     quad(r);
+    return 0;
 }
