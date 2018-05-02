@@ -14,18 +14,14 @@ long facto(int n)
 
 int main()
 {
-  int n;  long fact;
-
+  int n;
   printf("Enter an integer to find its factorial\n");
   scanf("%d", &n); 
 
   if (n < 0)
     printf("Factorial of negative integers is not defined.\n");
   else
-  {
-    fact = facto(n);
-    printf("%d! = %ld\n", n, fact);
-  }
-
+    printf("%d! = %ld\n",n,facto(n));
+  
   return 0;
 }
